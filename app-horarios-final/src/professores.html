@@ -1,0 +1,108 @@
+<div class="columns is-variable is-desktop">
+  <div class="column">
+    <h1 class="title" style="z-index: 60 !important;">
+      Gerador de Horários
+    </h1>
+  </div>
+</div>
+<div class = "container">
+  <div class = "box">
+    <hr style = "padding: 0; margin-top: 0;"><h1 class="title">Cadastro de Professores</h1><hr>
+    <div class="field">
+      <label class="label">
+        Nome do(a) Professor(a)
+        <img src="img/help.png" class="ajuda" alt="" divId="#mensagemNomeProfessor">
+      </label>
+      <label id="mensagemNomeProfessor" class="label labelAjudaInputs">
+        Nome do professor.
+      </label>
+      <div class="control has-icons-left has-icons-right">
+        <input id="proNome" class="input is-primary" type="text" placeholder="Ex: Géssica Muniz" value="">
+        <span class="icon is-small is-left">
+          <i class="fas fa-chalkboard-teacher"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+      <p class="help is-dark">Ponha o nome do(a) professor(a) correto, por favor!!!</p>
+    </div>
+    <div class="field">
+      <label class="label">
+        Quais dias esse professor não pode ter aula
+        <img src="img/help.png" class="ajuda" alt="" divId="#mensagemDia">
+      </label>
+      <label id="mensagemDia" class="label labelAjudaInputs">
+        Caso o professor não possa ter aula naquele dia.
+      </label>
+      <div class="diaSemana">
+        <div>
+          <input id="inputSegunda" class="checkDia is-primary" type="checkbox" value="Segunda">
+          <span class="">
+            Segunda
+          </span>
+        </div>
+        <div id="divSegunda"></div>
+      </div>
+      <div class="diaSemana">
+        <div>
+          <input id="inputTerca" class="checkDia is-primary" type="checkbox" value="Terca">
+          <span class="">
+            Terça
+          </span>
+        </div>
+        <div id="divTerca"></div>
+      </div>
+      <div class="diaSemana">
+        <div>
+          <input id="inputQuarta" class="checkDia is-primary" type="checkbox" value="Quarta">
+          <span class="">
+          Quarta
+          </span>
+        </div>
+        <div id="divQuarta"></div>
+      </div>
+      <div class="diaSemana">
+        <div>
+          <input id="inputQuinta" class="checkDia is-primary" type="checkbox" value="Quinta">
+          <span class="">
+            Quinta
+          </span>
+        </div>
+        <div id="divQuinta"></div>
+      </div>
+      <div class="diaSemana">
+        <div>
+          <input id="inputSexta" class="checkDia is-primary" type="checkbox" value="Sexta">
+          <span class="">
+          Sexta
+          </span>
+        </div>
+        <div id="divSexta"></div>
+      </div>
+    </div>
+    <div class="field is-grouped">
+      <div class="control">
+        <button id="cadProfessor" class="button is-primary">Cadastrar</button>
+      </div>
+    </div>
+    <div>
+      <div style="margin-bottom: 10px; background-color: #5dd8bd;color: black;text-align: center;"> > PROFESSORES CADASTRADOS </div>
+      <table id="tabelaProfessores" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <tr>
+          <td>
+            Professor
+          </td>
+          <td>
+            Deletar
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  trazQtdeAulas();
+  trazProfessoresApagar("#tabelaProfessores", "stProfessores");
+</script>

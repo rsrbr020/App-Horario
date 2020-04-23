@@ -1,0 +1,103 @@
+<div class="columns is-variable is-desktop">
+  <div class="column">
+    <h1 class="title">
+      Gerador de Horários
+    </h1>
+  </div>
+</div>
+<div class = "container">
+  <div class = "box">
+    <hr style = "padding: 0; margin-top: 0;"><h1 class="title">Cadastro das Disciplinas</h1><hr>
+    <div class="field">
+      <label class="label">
+        Nome da Disciplina
+        <img src="img/help.png" class="ajuda" alt="" divId="#mensagemNomeDisciplina">
+      </label>
+      <label id="mensagemNomeDisciplina" class="label labelAjudaInputs">
+        Nome da diciplina.
+      </label>
+      <div class="control has-icons-left has-icons-right">
+        <input id="disNome" class="input is-primary" type="text" placeholder="Ex: Português" value="">
+        <span class="icon is-small is-left">
+          <i class="fas fa-book"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+      <p class="help is-dark">Ponha o nome da disciplina correto, por favor!!!</p>
+    </div>
+    <div class="field">
+      <label class="label">
+        Cor da disciplina
+        <img src="img/help.png" class="ajuda" alt="" divId="#mensagemCor">
+      </label>
+      <label id="mensagemCor" class="label labelAjudaInputs">
+        Cor que ficará no calendário, por favor escolha cores não muito escuras.
+      </label>
+      <div class="control">
+        <div class="is-primary">
+          <input id="disCor" type="color" value="#DAA520" style="border: 2px solid #8DD5BD; border-radius: 4px;">
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">
+        Professor da disciplina
+        <img src="img/help.png" class="ajuda" alt="" divId="#mensagemProfessor">
+      </label>
+      <label id="mensagemProfessor" class="label labelAjudaInputs">
+        Professor que lecionará a disciplina.
+      </label>
+      <div class="control">
+        <div class="select is-primary">
+          <select id="disIdProf"></select>
+        </div>
+      </div>
+    </div>
+    <div class = "table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+      <label class="label">
+        Quantidade de aulas por turma
+        <img src="img/help.png" class="ajuda" alt="" divId="#mensagemQtdeAula">
+      </label>
+      <label id="mensagemQtdeAula" class="label labelAjudaInputs">
+        Caso a turma não tenha aulas, deixe como valor 0.
+      </label>
+      <div id="disTabelaTurmas"></div>
+      <!-- <button id="cadCarga">Teste</button> -->
+    </div>
+    <div class="field is-grouped">
+      <div class="control">
+        <button id="cadDisciplina" class="button is-primary">Cadastrar</button>
+      </div>
+    </div>
+
+    <hr style="background-color: black;">
+
+    <div>
+      <div style="margin-bottom: 10px; background-color: #5dd8bd;color: black;text-align: center;"> > DISCIPLINAS CADASTRADAS</div>
+      <table id="tabelaDisciplinas" class="table" style="color: black;">
+        <tr>
+          <td>
+            Disciplina
+          </td>
+          <td>
+            Professor
+          </td>
+          <td>
+            Cor
+          </td>
+          <td>
+            Deletar
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  trazProfessoresMatriz();
+  listaProfessoresSelect();
+  listaTurmasDisc();
+  trazDisciplinaApagar("#tabelaDisciplinas", "stDisciplinas");
+</script>

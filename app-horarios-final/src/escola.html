@@ -1,0 +1,74 @@
+<div class="columns is-variable is-desktop">
+    <div class="column">
+      <h1 class="title">
+        Gerador de Horários
+      </h1>
+    </div>
+  </div>
+<div class = "container">
+    <div class = "box">
+        <hr style = "padding: 0; margin-top: 0;"><h1 class="title">Cadastre os dados escolares</h1><hr>
+        <div class="field">
+            <label class="label">
+                Nome da Escola
+                <img src="img/help.png" class="ajuda" alt="" divId="#mensagemNomeEscola">
+                <!-- <img src="img/help.png" class="ajuda" alt="" idMensagem="#mensagemTeste">
+                <div id="mensagemTeste" class="mensagem">
+                    Esse nome servirá como cabeçalho do pdf gerado.
+                </div> -->
+            </label>
+            <label id="mensagemNomeEscola" class="label labelAjudaInputs">
+                Esse nome servirá como cabeçalho do pdf gerado.
+            </label>
+            <div class="control has-icons-left has-icons-right">
+                <input id="escNome" class="input is-primary" type="text" placeholder="Ex: EEEP José Vidal Alves" value="">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-school"></i>
+                </span>
+                <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                </span>
+            </div>
+            <p class="help is-dark">Ponha o nome da escola correto, por favor!!!</p>
+        </div>
+        <!-- <div class="field">
+            <label class="label">Quantidade de aulas por dia</label>
+            <div class="control has-icons-left has-icons-right">
+                <input id="escQtdeAulas" class="input is-primary" type="text" placeholder="Ex: 9" value="">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-clock"></i>
+                </span>
+                <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                </span>
+                <p class="help is-dark">Ponha a quantidade de aulas que a escola tem por dia, por favor!!!</p>
+            </div>
+        </div> -->
+        <div class="field">
+            <label class="label">
+                Quantidade de aulas por dia
+                <img src="img/help.png" class="ajuda" alt="" divId="#mensagemqtdeAulas">
+            </label>
+            <label id="mensagemqtdeAulas" class="label labelAjudaInputs">
+                Quantidade de aulas por dia, que a escola tem em média por dia.
+            </label>
+            <div class="control">
+                <div class="select is-primary">
+                    <select id="escQtdeAulas">
+                        <option value="0">Selecione</option>
+                        <option value="5">5 aulas</option>
+                        <option value="9">9 aulas</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="field is-grouped">
+        <div class="control">
+            <button id="cadEscola" class="button is-primary">Cadastrar</button>
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+    trazQtdeAulas();
+</script>

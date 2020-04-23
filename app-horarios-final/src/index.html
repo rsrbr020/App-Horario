@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>Gerador de Horários</title>
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        <!-- css -->
+        <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"> -->
+        <link rel="stylesheet" href="../node_modules/bulma/css/bulma.min.css">
+        <!-- <link rel="stylesheet" href="../node_modules/bulma-switch/dist/css/bulma-switch.min.css"> -->
+        <link rel="stylesheet" href="css/style.css">
+        
+        <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
+        <script src="../node_modules/file-saver/src/FileSaver.js"></script>
+        <script src="controller/conexao.js"></script>
+        <!-- <script src="../node_modules/jquery/dist/jquery.js"></script> -->
+        <!-- <script src="../node_modules/jspdf/dist/jspdf.min.js"></script> -->
+        <!-- <script src="../node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js"></script> -->
+        <!-- <script src="../node_modules/html2canvas/dist/html2canvas.js"></script> -->
+        <!-- <script src="../node_modules/canvas2image/canvas2image.js"></script> -->
+        <!-- <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script> -->
+    </head>
+    <body style="background-color: #ffffff;">
+        <div id="menuAcoesApp">
+          <div class="tudoso">
+            <div class="boto">
+              <ul id="acoesAplicativo">
+                <li id="botaoMinimizar" class="button1" title="Minimizar">
+                  <i class="fas fa-compress-arrows-alt"></i>
+                </li>
+                <li id="botaoRestaurar" class="button1" title="">
+                  <i class=""></i>
+                </li>
+                <li id="botaoFechar" class="button1" title="Fechar">
+                  <i class="far fa-window-close"></i>
+                </li>
+            </ul>
+              <!-- <button class="button1" style="background: none;top: 6px;" title="Expandir"><i class="fas fa-expand-arrows-alt"></i></button>
+              <button class="button1" style="background: none;top: 6px;" title="Minimizar"><i class="fas fa-compress-arrows-alt"></i></i></button>
+              <button class="button1" style="background: none;top: 6px;" title="Restaurar"><i class="far fa-window-restore"></i></button>
+              <button class="button1" style="background: none;top: 6px;" title="Fechar"><i class="far fa-window-close"></i></i></button> -->
+            </div>
+          </div>
+        </div>
+        <nav id="menuBar" class="navbar is-fixed-top box-shadow-y">
+          <div class="navbar-brand" style="background-color: #202020">
+            <a
+              role="button"
+              class="navbar-burger toggler"
+              aria-label="menu"
+              aria-expanded="false"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+            <a href="#" class="navbar-item has-text-weight-bold">
+              GeradorDeHorários
+            </a>
+            <a
+              role="button"
+              class="navbar-burger nav-toggler"
+              aria-label="menu"
+              aria-expanded="false"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+            <!-- <div class="boto is-fixed-top box-shadow-y">
+              <button class="button1" style="background: none;top: 6px;" title="Expandir"><i class="fas fa-expand-arrows-alt"></i></button>
+              <button class="button1" style="background: none;top: 6px;" title="Minimizar"><i class="fas fa-compress-arrows-alt"></i></i></button>
+              <button class="button1" style="background: none;top: 6px;" title="Restaurar"><i class="far fa-window-restore"></i></button>
+              <button class="button1" style="background: none;top: 6px;" title="Fechar"><i class="far fa-window-close"></i></i></button>
+            </div> -->
+          </div>
+          <div class="navbar-menu">
+            <div class="navbar-start">
+              <a href="indexCopia.html" class="navbar-item requisaoPaginas">
+                <i class="fas fa-home icon"></i> Home
+              </a>
+              <a href="turmas.html" class="navbar-item requisaoPaginas">
+                Turmas
+              </a>
+              <a href="professores.html" class="navbar-item requisaoPaginas">
+                Professores
+              </a>
+              <a href="disciplinas.html" class="navbar-item requisaoPaginas">Disciplinas</a>
+            </div>
+            <div class="navbar-end">
+              <!-- <a href="#" class="navbar-item">
+                Calendário
+              </a> -->
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a href="#" class="navbar-link">
+                  Administrador
+                </a>
+                <div class="navbar-dropdown is-right">
+                  <!-- <a href="#" class="navbar-item">
+                    Professor
+                  </a> -->
+                  <a class="navbar-item">Gestão</a>
+                  <!-- <hr class="navbar-divider" />
+                  <a href="#" class="navbar-item">Sair da conta</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        
+        <!-- <div class="tudoso">
+          <div class="boto">
+            <button class="button1" style="background: none;top: 6px;" title="Expandir"><i class="fas fa-expand-arrows-alt"></i></button>
+            <button class="button1" style="background: none;top: 6px;" title="Minimizar"><i class="fas fa-compress-arrows-alt"></i></i></button>
+            <button class="button1" style="background: none;top: 6px;" title="Restaurar"><i class="far fa-window-restore"></i></button>
+            <button class="button1" style="background: none;top: 6px;" title="Fechar"><i class="far fa-window-close"></i></i></button>
+          </div>
+        </div> -->
+        <div class="columns is-variable is-0">
+          <div>
+            <div class="menu-container px-1 has-text-white">
+              <div class="menu-wrapper py-1">
+                <aside class="menu">
+                  <p class="menu-label has-text-lighter">Geral</p>
+                  <ul class="menu-list">
+                    <li>
+                      <a href="#" class="is-active has-background-warning">
+                        <i class="fas fa-tachometer-alt icon iconPainel"></i>
+                        Painel de Controle</a
+                      >
+                    </li>
+                  </ul>
+                  <p class="menu-label has-text-lighter">Administração</p>
+                  <ul class="menu-list">
+                    <!-- <li>
+                      <a href="#" class="is-active has-background-primary">
+                        <i class="fas fa-cogs icon"></i>
+                        Settings</a
+                      >
+                    </li> -->
+                    <li>
+                      <a class="has-text-white">
+                        <i class="fas fa-users-cog icon"></i>
+                        Todos os Cadastros</a
+                      >
+                      <ul>
+                        <!-- <li>
+                          <a href="indexCopia.html" class="has-text-white requisaoPaginas">
+                            <i class="fas fa-home icon"></i>
+                            Home
+                          </a>
+                        </li> -->
+                        <li>
+                          <a href="escola.html" class="has-text-white requisaoPaginas">
+                            <i class="fas fa-school icon"></i>
+                            Dados Escolares
+                          </a>
+                        </li>
+                        <li>
+                          <a href="turmas.html" class="has-text-white requisaoPaginas">
+                            <i class="fas fa-users icon"></i>
+                            Turmas</a
+                          >
+                        </li>
+                        <li>
+                          <a href="professores.html" class="has-text-white requisaoPaginas">
+                            <i class="fas fa-user-plus icon"></i>
+                            Professores</a
+                          >
+                        </li>
+                        <li>
+                          <a href="disciplinas.html" class="has-text-white requisaoPaginas">
+                            <i class="fas fa-book icon"></i>
+                            Disciplinas</a>
+                        </li>
+                      </ul>
+                      <li>
+                        <a href="gerarCalendario.html" class="has-text-black requisaoPaginas" style="background:#f46d52; margin-bottom: 5px;">
+                          <i class="fas fa-calendar-alt icon"></i>
+                          Gerar Calendário
+                        </a>
+                      </li>
+                      <li>
+                        <a href="configuracoes.html" class="is-active has-background-warning requisaoPaginas" style="color: black !important;">
+                        <i class="fas fa-cogs icon"></i>
+                        Configurações</a>
+                      </li>
+                    </li>
+                  </ul>
+                  <!-- <p class="menu-label has-text-lighter">Mais</p>
+                  <ul class="menu-list">
+                    <li>
+                      <a href="#" class="has-text-black">
+                        <i class="fas fa-comments icon"></i>
+                        Chats</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="has-text-black">
+                        <i class="fas fa-info-circle icon"></i>
+                        Extras</a
+                      >
+                    </li> -->
+                  </ul>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="divScroll">
+          <section id="corpoApp" class = "hero is-fullheight">
+            <div class="columns is-variable is-desktop">
+              <div class="column">
+                <h1 class="title" style="z-index: 60 !important;">
+                  Gerador de Horários
+                </h1>
+              </div>
+            </div>
+            <div class = "container">
+              <div class = "columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd" style = "margin-top: -50px;">
+                <div class="column">
+                  <img src="img/Gerador-De-Horarios.png" style="width: 100%; margin-bottom: -120px;"/>
+                </div>
+                <div class="column" style="margin-top: 80px;">
+                  <div class="notification" style="background-color: red; color: white;">
+                    Desculpe qualquer <strong>instabilidade</strong> no app <code>Gerador de Horário Escolar</code>, quaquer bug feche o programa e abra novamente.
+                  </div>
+                  <div class="notification">
+                    Caso queira apenas fazer testes vá em <strong>Configurações</strong> e importe um arquivo pronto.
+                  </div>
+                  <div class="notification">
+                    Sistema desenvolvido para <strong>diminuir e auxilixar</strong> no tempo destinado para fazer o <code>horário escolar</code>
+                  </div>
+                  <div class="notification">
+                    Sistema <strong>rápido, fácil e dinâmico</strong> , para melhorar a eficácia do seu <code>horário escolar</code>
+                  </div>
+                  <div class="notification" style="margin-bottom: 25px;">
+                    Sem <strong>nenhuma</strong> dificuldade, o <code> Gerador de Horários </code> pode contribuir bastante na sua instituição escolar.
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <h1 class="title has-text-centered" style="margin-bottom: 30px; margin-top: -40px;">Dicas Importantes!</h1>
+              </div>
+  
+              <div class="columns" style="padding-left: 24px;">
+                <div id="notificacao-1" class="column" style="padding: 5px;">
+                  <div class="notification is-warning">
+                    <button class="delete delete" divId="#notificacao-1" onclick=""></button>
+                    > Cadastre <strong> TODOS </strong> os requisitos desejados. <br>
+                    > Faça o cadastro de acordo com a ordem do menu lateral. <br>
+                    > Não esqueça de nenhum caractere(nome) dos requisistos. <br>
+                    > Certifique que tudo está correto antes de apertar o botão cadastrar. <br>
+                    > Feito isso é só <code> CADASTRAR </code>
+                  </div>
+                </div>
+                <div id="notificacao-2" class="column" style="padding: 5px;">
+                  <div class="notification is-danger">
+                    <button class="delete" divId="#notificacao-2" onclick=""></button>
+                    > Depois de cadastrar todos os requisistos, vá na aba <strong> Gerar Calendário </strong>. <br>
+                    > Clique no botão <strong>Gerar</strong>. <br>
+                    > Certifique que <strong>TODAS</strong> as selas de aulas estão preenchidas. <br>
+                    > Feito isso, clique no botão <strong>Gerar PDF</strong>. <br>
+                    > Pronto! Seu horário ja está feito, e gerado em PDF.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        
+        <div id="divMensagens"></div>
+        <div class="fab"  ontouchstart="">
+          <h1>VRL Desenvolvimentos</h1>
+        </div>
+        <!-- <div id="tabela" class="table"></div> -->
+        <!-- js -->
+        <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/js/bootstrap.js"> -->
+        <!-- <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/jspdf/dist/jspdf.min.js"></script>
+        <script src="../node_modules/html2canvas/dist/html2canvas.js"></script>
+        <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script> -->
+        <script src="js/script.js"></script>
+        <script src="../renderizador.js"></script>
+        <script src="js/script2.js"></script>
+        <script src="js/ajax.js"></script>
+        <script src="controller/funcoes.js"></script>
+        <!-- <script src="controller/professores.js"></script>
+        <script src="controller/turmas.js"></script>
+        <script src="controller/disciplinas.js"></script>
+        <script src="controller/escola.js"></script> -->
+      </body>
+</html>

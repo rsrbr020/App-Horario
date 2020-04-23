@@ -1,0 +1,187 @@
+            <div class="columns is-variable is-desktop">
+                <div class="column">
+                    <h1 class="title">
+                        Gerador de Horários
+                    </h1>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="title has-text-centered" style="margin-bottom: 20px; font-size: 20px;">Caso seja sua primeira vez aqui, dê uma olhada nas dicas por favor</h3>
+            </div>
+
+            <hr style="margin-top: -3px;">
+
+            <div id="notificacao-2" class="column" style="padding: 5px;">
+                <div class="notification is-danger">
+                  <button class="delete" divId="#notificacao-2" onclick=""></button>
+                      <ul>
+                          <li>
+                              <strong>Nota Importante</strong>, a questão de o professor não ter aula naquele horário, só está funcionando, qunado o calendário é gerado com conflitos e no trocar aulas, desculpe o inconveniente;
+                          </li>
+                      </ul>
+                </div>
+              </div>
+
+            <div class = "box">
+                <div class = "tabble-container">
+                    <div class="col-12 row has-text-centered">
+                        <div id="divCalendario" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style = "display: inline-flex;">
+                            <div id="calendario" class = "table" style="display: inline-flex;"></div>
+                        </div>
+                        <div class="col-12 row has-text-centered">
+                            <div class="col-12 d-inline-block" id="buttonsAcao">
+                                <div id="gerarCalendarioDiv" class="col-12 d-flex justify-content-center">
+                                    <h1 class="subtitle">Gere o calendário para editalo!!!</h1> 
+                                    <div class="has-text-centered">
+                                        <button id="gerarCalendario" class="button is-primary">Gerar</button>
+                                    </div> 
+                                </div>
+                                <div id="gerarCalendarioFinalDiv" class="col-12 d-flex justify-content-center">
+                                    <h1 class="subtitle">Agora gere o calendário com as aulas!!!</h1> 
+                                    <div class="has-text-centered">
+                                        <button id="gerarCalendarioFinal" class="button is-primary">Gerar</button>
+                                    </div> 
+                                    <hr class="separador">
+                                    <div class="col-12 row has-text-centered">
+                                        <label class="label" for="soDistribuiAulas">
+                                            Caso queira você mesmo apenas distribuir as aulas, e você mesmo retirar os conflitos do horário, marque esse item.
+                                        </label>
+                                        <div class="checkCalendario" style="display: flex; flex-direction: row; align-items: center; justify-content: center; flex-wrap: wrap;">
+                                            <input type="checkbox" id="soDistribuiAulas">
+                                            <label style="margin-left: 10px;">Gerar calendário, com conflitos.</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="gerarPdfDiv" class="col-12 d-flex justify-content-center">
+                                    <h1 class="subtitle">Agora é só gerar o PDF e escolher o nome do arquivo!!!</h1> 
+                                    <div class="has-text-centered">
+                                        <label for="">Nome do arquivo, por favor não mude o nome na hora de salvar</label>
+                                        <input type="text" id="nomePdf" value="calendario">
+                                    </div> 
+                                    <div class="has-text-centered">
+                                        <button id="gerarPdf" class="button is-primary">Gerar PDF</button>
+                                    </div> 
+                                </div>
+                            </div>
+                            <hr class="separador">
+                            <div class="col-12 row has-text-centered">
+                                <div class="col-12 d-inline-block">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <h1 class="subtitle">Resete o calendário caso queira mudar algo!!!</h1> 
+                                        <div class="has-text-centered">
+                                            <button id="resetarCalendario" class="button is-danger">Resetar Calendário</button>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="margin-top: -3px;">
+            <div>
+                <h1 class="title has-text-centered" style="margin-bottom: 20px;">DICAS IMPORTANTES PARA GERAR SEU CALENDÁRIO!</h1>
+            </div>
+            
+            <div class="columns" style="padding-left: 24px;">
+                <div id="notificacao-1" class="column" style="padding: 5px;">
+                  <div class="notification is-warning">
+                    <button class="delete delete" divId="#notificacao-1" onclick=""></button>
+                    <ul>
+                        <li>
+                            Com a opção <strong>"Gere o calendário para editalo!!!"</strong>, é gerado um calendário a partir da quantidade de aulas que sua escola possui, nele você poderá editar a quantidade de aulas de certo dia, sem alguma turma não terá aula em certo horário, tipo de aula; 
+                        </li>
+                        <li>
+                            Ao clicar nas celulas da tabela onde estará o texto "Aula" com <strong>CTRL+Botão Direito</strong>, do mouse ou touchpad. Você poderá alternar entre, "Sem Aula", "Aula Fixa" e "Aula";
+                            <ul class="dicasTextIndent">
+                                <li>- <strong>"Sem Aula"</strong>, significa que não haverá aula para aquela turma, naquele horário;</li>
+                                <li>- <strong>"Aula Fixa"</strong>, significa que você poderá colocar uma aula fixa, que será ignorada na hora de retirar conflitos, naquele momento, como exemplo podemos citar o "Momento Cívico" que em algumas escolas é realizado sempre na segunda aula da segunda-feira</li>
+                                <li>- <strong>"Aula"</strong>, significa o gerador de calendários vai considerar ela para distribuir as aulas cadastradas;</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Botão Adicionar</strong>, adiciona uma linha com novas aulas;
+                        </li>
+                        <li>
+                            <strong>Botão Remover</strong>, remove uma linha com aulas;
+                        </li>
+                        <li>
+                            Essa duas opções servem para aqueles dias que têm uma aula a mais, ou a menos;
+                        </li>
+                    </ul>
+                    <!-- > Feito isso é só <code> CADASTRAR </code> -->
+                  </div>
+                </div>
+                <div id="notificacao-2" class="column" style="padding: 5px;">
+                  <div class="notification is-danger">
+                    <button class="delete" divId="#notificacao-2" onclick=""></button>
+                        <ul>
+                            <li>
+                                <strong>Agora gere o calendário com as aulas!!!</strong>, essa funcionabilidade distribui as aulas cadastradas, no calendário, e retira os conflitos;
+                            </li>
+                            <li>
+                                <strong>Gerar Calendário, com Conflitos</strong>, caso queira você mesmo retirar os conflito, marcando essa opção nós apenas distribuiremos as aulas;
+                            </li>
+                            <li>
+                                <strong>Trocar aulas</strong>, marcando ou não marcando essa opção ao gerar o calendário, você terá a opção de trocar aulas caso ache conveniente ou marque <strong>Gerar clendário, com conflitos</strong>;
+                            </li>
+                            <li>
+                                <strong>Como Trocar as Aulas</strong>, clique sobre a aula que deseja trocar, então aparecerá uma caixa com a aula escolhida junto ao mouse, bastando clicar sobre a aula que deseja fazer a troca;
+                            </li>
+                            <li>
+                                <strong>Erros Gerados ao Trocar as Aulas</strong>, uma caixa de texto aparecerá, informando o erro, mas basicamente são dois, esses implicarão na não realização da troca;
+                                <ul class="dicasTextIndent">
+                                    <li>
+                                        <strong>Essa Troca Causará Conflito</strong>, se a troca acontecesse causaria conflito.
+                                    </li>
+                                    <li>
+                                        <strong>O Professor Não Pode Ter Aula Naquele Horário</strong>, por exemplo: o professor diretor de turma, não pode ter aula na 4ª e 5ª aula da segunda-feira;
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                  </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- <div>
+                <h1 class="title has-text-centered" style="margin-bottom: 20px; color: white; margin-top: -20px;">Dicas Importantes!</h1>
+            </div>
+            
+            <div class="columns" style="padding-left: 24px;">
+                <div id="notificacao-1" class="column" style="padding: 5px;">
+                  <div class="notification is-warning">
+                    <button class="delete delete" divId="#notificacao-1" onclick=""></button>
+                    > Cadastre <strong> TODOS </strong> os requisitos desejados. <br>
+                    > Faça o cadastro de acordo com a ordem do menu lateral. <br>
+                    > Não esqueça de nenhum caractere(nome) dos requisistos. <br>
+                    > Certifique que tudo está correto antes de apertar o botão cadastrar. <br>
+                    > Feito isso é só <code> CADASTRAR </code>
+                  </div>
+                </div>
+                <div id="notificacao-2" class="column" style="padding: 5px;">
+                  <div class="notification is-danger">
+                    <button class="delete" divId="#notificacao-2" onclick=""></button>
+                    > Depois de cadastrar todos os requisistos, vá na aba <strong> Gerar Calendário </strong>. <br>
+                    > Clique no botão <strong>Gerar</strong>. <br>
+                    > Certifique que <strong>TODAS</strong> as selas de aulas estão preenchidas. <br>
+                    > Feito isso, clique no botão <strong>Gerar PDF</strong>. <br>
+                    > Pronto! Seu horário ja está feito, e gerado em PDF.
+                  </div>
+                </div>
+            </div> -->
+
+            <script>
+                $(document).ready(function () {
+                    $("#gerarCalendario").prop("disabled", true);
+                    trazDiasSemAula();
+                    trazDisciplinasMatriz();
+                    trazProfessoresMatriz();
+                    trazTurmasMatriz();
+                    trazQtdeAulas();
+                    trazCargaMatriz();
+                });
+            </script>

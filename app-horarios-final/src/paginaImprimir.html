@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>Gerador de Horários</title>
+        <!-- css -->
+        <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"> -->
+        <link rel="stylesheet" href="../node_modules/bulma/css/bulma.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        
+        <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
+        <script src="controller/conexao.js"></script>
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/jspdf/dist/jspdf.min.js"></script>
+        <script src="../node_modules/html2canvas/dist/html2canvas.js"></script>
+        <script src="../node_modules/canvas2image/canvas2image.js"></script>
+    </head>
+    <body class="has-navbar-fixed-top">
+        <section id="corpoApp" class = "hero has-background-white-ter is-fullheight">
+          <div class = "container">
+            <div class="box">
+              <div id="divCalendario" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <div id="calendario" class = "table"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div id="preview"></div>
+        <script src="js/script.js"></script>
+        <script>
+            $(document).ready(function () {
+                trazCalendario();
+                // transformaImagem();
+            });
+        </script>
+      </body>
+</html>

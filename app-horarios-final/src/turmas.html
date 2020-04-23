@@ -1,0 +1,77 @@
+<div class="columns is-variable is-desktop">
+  <div class="column">
+    <h1 class="title" style="z-index: 60 !important;">
+      Gerador de Horários
+    </h1>
+  </div>
+</div>
+<div class="container">
+  <div class = "box">
+    <hr style = "padding: 0; margin-top: 0;"><h1 class="title">Cadastro das Turmas</h1><hr>
+    <div class="field">
+      <label class="label">
+        Nome da Turma 
+        <img src="img/help.png" class="ajuda" alt="" divId="#mensagemTurma">
+      </label>
+      <label id="mensagemTurma" class="label labelAjudaInputs">
+        O ano da turma será gerado a partir de outros fatores.
+      </label>
+      <div class="control has-icons-left has-icons-right">
+        <input id="nomeTurma" class="input is-primary" type="text" placeholder="Ex: Rede de Computadores" value="">
+        <span class="icon is-small is-left">
+          <i class="fas fa-users"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+      <p class="help is-dark">Ponha o nome da turma correto, por favor!!!</p>
+    </div>
+    <div class="field">
+      <label class="label">
+        Ano da Turma
+        <img src="img/help.png" class="ajuda" alt="" divId="#mensagemAno">
+      </label>
+      <label id="mensagemAno" class="label labelAjudaInputs">
+        Ano que a turma entrou na escola.
+      </label>
+      <div class="control">
+        <div class="select is-primary">
+          <select id="selectAno">
+              <script type="text/javascript">
+                function select(){
+                  let html= "<option value='0'>Selecione o Ano</option>";
+                  let anoAtual= (new Date()).getFullYear();
+                  let aux= 0;
+                  while(aux< 21){
+                    html+= "<option value='"+(anoAtual-aux)+"'>"+(anoAtual-aux)+"</option>";
+                    aux++;
+                  }
+                  $("#selectAno").html(html);
+                }
+                select();
+              </script>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="field is-grouped">
+      <div class="control">
+        <button id="cadTurma" class="button is-primary">Cadastrar</button>
+      </div>
+    </div>
+    <div>
+      <div style="margin-bottom: 10px; background-color: #5dd8bd;color: black;text-align: center;"> > SUAS TURMAS CADASTRADAS</div>
+      <table id="tabelaTurmas" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <tr>
+          <td>Turma</td>
+          <td>Ano</td>
+          <td>Deletar</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<script>
+  trazTurmasApagar("#tabelaTurmas", "stTurmas");
+</script>

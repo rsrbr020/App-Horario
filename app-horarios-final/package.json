@@ -1,0 +1,40 @@
+{
+  "name": "app-horarios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "electron-builder main.js",
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "VRL Desenvovimento",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.2.3",
+    "electron-builder": "^22.5.1"
+  },
+  "dependencies": {
+    "bulma": "^0.8.2",
+    "bulma-switch": "^2.0.0",
+    "file-saver": "^2.0.2",
+    "font-awesome": "^4.7.0",
+    "indexeddb-export-import": "^2.0.2",
+    "jquery": "^3.5.0",
+    "jquery.nicescroll": "^3.7.6",
+    "phantom-html-to-pdf": "^0.6.0"
+  },
+  "build": {
+    "appId": "com.vrldesenvolvimento.app-horarios-electron",
+    "productName": "app-horarios",
+    "directories": {
+      "output": "dist"
+    },
+    "publish": null,
+    "win": {
+      "icon": "logo1.png",
+      "target": "nsis"
+    }
+  }
+}
