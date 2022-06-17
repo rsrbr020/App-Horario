@@ -12,7 +12,7 @@
   "author": "VRL Desenvovimento",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^8.2.3",
+    "electron": "^15.5.5",
     "electron-builder": "^22.5.1"
   },
   "dependencies": {
